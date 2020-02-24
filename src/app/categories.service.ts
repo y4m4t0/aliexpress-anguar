@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ICategory } from './category'
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class CategoriesService {
+  
+  private _url: string = "/assets/data/categories.json"
 
-  constructor() { }
+  constructor(private http: HttpClient) { 
+  }
 
-  getCategories()  {
-    return [
-      { id: 1, name: 'Iphone', path: 'iphone' },
-      { id: 2, name: 'Samsung', path: 'samsung' },
-      { id: 3, name: 'Xiaomi', path: 'xiaomi' },
-      { id: 4, name: 'Huawei', path: 'huawei' }
-    ]
+  getCategories(): Observable<ICategory[]>   {
+    return this.http.get<ICategory[]>(this._url);
   }
 }

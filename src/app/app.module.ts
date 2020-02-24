@@ -15,6 +15,7 @@ import { ProductService } from './product.service';
 import { CategoriesService } from './categories.service';
 import { ProductItemDetailsComponent } from './product-item-details/product-item-details.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     XiaomiItemComponent,
     HuaweiItemComponent,
     ProductItemDetailsComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

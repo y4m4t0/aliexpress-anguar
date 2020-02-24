@@ -16,15 +16,10 @@ export class ProductItemDetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private _productService: ProductService) { }
 
-  ngOnInit(): void {
-    this._productService.getProducts()
-      .subscribe(data => {
-        this.products = data.filter(object => object.category == 'iphone')
-      }); 
-    
+  ngOnInit(): void {    
     let id = parseInt(this.route.snapshot.paramMap.get('id'));
     
-    this.productId = this._productService.getProducts()
+    this.productId = this._productService.getProduct()
       .subscribe(data => {
         this.productId = data.find(object => object.id == id)
       })

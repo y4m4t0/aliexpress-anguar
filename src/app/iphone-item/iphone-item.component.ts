@@ -20,10 +20,9 @@ export class IphoneItemComponent implements OnInit {
     // this._productService.getProductsByCategory('iphone')
     //   .subscribe(data => this.products = data);
     
-    this._productService.getProducts()
+    this._productService.getProductsByCategory()
       .subscribe(data => {
         this.products = data.filter(object => object.category == 'iphone')
-        console.log(JSON.parse(data))
       })
 
   

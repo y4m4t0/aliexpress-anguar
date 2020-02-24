@@ -15,7 +15,7 @@ export class XiaomiItemComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._productService.getProducts()
+    this._productService.getProductsByCategory()
       .subscribe(data => {
         this.products = data.filter(object => object.category == 'xiaomi')
       })    

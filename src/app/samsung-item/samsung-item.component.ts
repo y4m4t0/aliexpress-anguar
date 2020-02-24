@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
     constructor(private _productService: ProductService, private router: Router) { 
     }
     ngOnInit() {
-      this._productService.getProducts()
+      this._productService.getProduct()
       .subscribe(data => {
         this.products = data.filter(object => object.category == 'samsung')
       })

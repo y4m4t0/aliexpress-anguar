@@ -14,10 +14,10 @@ export class HuaweiItemComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._productService.getProducts()
-      .subscribe(data => {
-        this.products = data.filter(object => object.category == 'huawei')
-      })
+    // this._productService.getProducts()
+    //   .subscribe(data => {
+    //     this.products = data.filter(object => object.category == 'huawei')
+    //   })
   }
 
   onSelect(product) {

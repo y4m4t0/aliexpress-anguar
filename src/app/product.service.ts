@@ -11,20 +11,11 @@ export class ProductService {
   constructor(private http: HttpClient) { 
   }
 
-  getProducts(): Observable<IProduct[]> {
+  getProduct(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>(this._url);
   }
 
-  getProduct(givenId) {
-    let arrayOfProducts = this.http.get<IProduct[]>(this._url);
-    console.log(arrayOfProducts)
-    return "arrayOfProducts.find(object => object.id == givenId)"
+  getProductsByCategory(): Observable<IProduct[]>{
+    return this.http.get<IProduct[]>(this._url);
   }
-
-  getProductsByCategory(category): Observable {
-    let url = `${this._url}?${category}`
-    return this.http.jsonp(url, 'callback').pipe(
-      catchError(this.handleError())
-    )
-  с}
 }
