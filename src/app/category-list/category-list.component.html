@@ -1,0 +1,7 @@
+<div class="categories">
+    <div *ngFor="let category of categories">
+        <div routerLink="{{category.path}}" routerLinkActive="active" class="button">{{ category.name }}</div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
