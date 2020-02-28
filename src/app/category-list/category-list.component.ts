@@ -16,7 +16,7 @@ export class CategoryListComponent implements OnInit {
 
   ngOnInit(): void {
     this._categoryService.getCategories()
-      .subscribe(data => {
+      .subscribe(data => {  
         this.categories = data
       })
   }
@@ -27,5 +27,5 @@ export class CategoryListComponent implements OnInit {
   } 
   
   onSelect(category) {
-    this.router.navigate(['/categories', category.path]);
+    this.router.navigate(['/categories', category.id]);
   }}

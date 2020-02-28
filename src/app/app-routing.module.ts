@@ -8,8 +8,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 const routes: Routes = [
   { path: '', redirectTo: '/categories', pathMatch: 'full' },
   { path: 'categories', component: CategoryListComponent},
-  { path: 'categories/:category', component: DashboardComponent },
-  { path: 'products/:id', component: ProductItemDetailsComponent }
+  { path: 'categories/:id', component: DashboardComponent },
+  { path: 'categories/:id/:id', component: ProductItemDetailsComponent }
 ];
 
 @NgModule({
